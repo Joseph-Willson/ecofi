@@ -424,7 +424,26 @@ for target in ['S&P 500', 'Treasuries index', 'Commodity index', 'Corporate Bond
         st.table(results.summary2().tables[1])  # Display only the coefficients table
 
 
+del df_estimations["Regime_Label_remap"]
+del df_estimations["Normalized_Indicator"]
 
+import plotly.figure_factory as ff
+
+# Assuming your DataFrame is named df_estimations
+correlation_matrix = df_estimations.corr()
+
+st.subheader("Annexe : Correlation Matrix of our economic indicator and portfolios")
+
+fig = ff.create_annotated_heatmap(
+    z=correlation_matrix.values,
+    x=list(correlation_matrix.columns),
+    y=list(correlation_matrix.index),
+    annotation_text=correlation_matrix.round(2).values,
+    showscale=True,
+    colorscale='Viridis'
+)
+
+st.plotly_chart(fig)
 
 
 
