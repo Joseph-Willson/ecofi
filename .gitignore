@@ -1,4 +1,6 @@
 /venv/
+/build/
+main.spec
 Dockerfile
 launch.ps1
 launch.EXE
