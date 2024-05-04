@@ -24,7 +24,7 @@ x_eco = st.sidebar.slider("* Weight of Log(VIX) in our economic indicator", 0.0,
 st.sidebar.write("Weight of Log(VIX) in our economic indicator:", round(x_eco * 100, 2), "%")
 y_eco = (1 - x_eco) / 3
 st.sidebar.write("Weight of 5-year, 10-year, and 30-year interest rates in our economic indicator:", round(y_eco * 100, 2), "%")
-number_of_regimes = st.sidebar.slider("* Number of regimes for the HMM model", 2, 6, 2, step=1)
+number_of_regimes = st.sidebar.slider("* Number of regimes for the HMM model", 2, 6, 4, step=1)
 
 ################################################################# Portfolios
 
